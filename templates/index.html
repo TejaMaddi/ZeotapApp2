@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Monitoring</title>
+</head>
+<body>
+    <h1>Weather Monitoring System</h1>
+    <table>
+        <tr>
+            <th>City</th>
+            <th>Temperature (°C)</th>
+            <th>Condition</th>
+        </tr>
+        {% for city in weather_data %}
+        <tr>
+            <td>{{ city['name'] }}</td>
+            <td>{{ city['main']['temp'] }}</td>
+            <td>{{ city['weather'][0]['main'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
